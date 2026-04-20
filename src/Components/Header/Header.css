@@ -1,0 +1,272 @@
+/* Header / Navbar styles */
+.header {
+	/* TopNavBar */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+position: absolute;
+width: 100%;
+height: auto;
+left: 0px;
+top: 0px;
+
+background: rgba(0, 17, 21, 0.8);
+box-shadow: 0px 0px 40px rgba(143, 245, 255, 0.05);
+backdrop-filter: blur(8px);
+/* Note: backdrop-filter has minimal browser support */
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+z-index: 2;
+
+}
+
+.navbar-container {
+	/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+padding: 16px 48px;
+
+
+
+width: auto;
+height: auto;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+}
+
+.logo {
+	/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+width: 98px;
+height: auto;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+}
+
+h1{
+	/* Sarbani. */
+
+width: 98px;
+height: 32px;
+
+font-family: 'Space Grotesk';
+font-style: normal;
+font-weight: 700;
+font-size: 1.5rem;
+line-height: 32px;
+/* identical to box height, or 133% */
+display: flex;
+align-items: center;
+letter-spacing: -1.2px;
+text-transform: uppercase;
+
+color: #8FF5FF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+}
+
+.link{
+	/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap:40px;
+
+
+list-style: none;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+}
+.link li{
+	/* Link */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: block;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px 0px 4px;
+
+
+height: auto;
+
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+}
+
+li a{
+ /* Text */
+
+
+
+font-family: 'Space Grotesk';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 24px;
+/* identical to box height, or 150% */
+display: flex;
+align-items: center;
+letter-spacing: -0.4px;
+text-transform: uppercase;
+text-decoration: none;
+color: #B7EEFC;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+}
+li a:hover{
+	/* Text */
+	text-decoration: underline;
+	color:#8FF5FF;
+}
+
+.btn{
+	/* Button */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 8px 24px;
+
+
+
+
+background: linear-gradient(135deg, #8FF5FF 0%, #00EEFC 100%);
+border-radius: 4px;
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+}
+.resume-btn{
+	/* Button */
+
+/* Auto layout */
+
+
+align-items: center;
+padding: 8px 24px;
+
+
+
+background: linear-gradient(135deg, #8FF5FF 0%, #00EEFC 100%);
+border-radius: 4px;
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+
+font-family: 'Space Grotesk';
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 20px;
+/* identical to box height, or 143% */
+
+align-items: center;
+text-align: center;
+text-transform: uppercase;
+
+color: #005D63;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+text-decoration: none;
+
+}
+
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #B7EEFC;
+}
+/* ------------------ MOBILE ------------------ */
+@media (max-width: 768px) {
+
+  .menu-icon {
+    display: block;
+  }
+
+  .link {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: rgba(0, 17, 21, 0.95);
+    text-align: center;
+    gap: 20px;
+    padding: 20px 0;
+
+    display: none;
+  }
+
+  .link.active {
+    display: flex;
+  }
+
+  .btn {
+    display: none; /* hide button in mobile (optional) */
+  }
+}
