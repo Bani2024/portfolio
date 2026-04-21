@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { FaArrowRight, FaAws, FaCode, FaJs, FaPencilRuler, FaReact, FaServer } from "react-icons/fa";
 import { SiGraphql, SiNextdotjs, SiPostgresql, SiPython, SiTypescript } from "react-icons/si";
 import avi from '../Assets/img1.png';
@@ -8,14 +9,35 @@ import Footer from "../Footer/Footer.jsx";
 import Header from '../Header/Header.jsx';
 import './Body.css';
 
-
 const Body = () => {
+  useEffect(() => {
+  const elements = document.querySelectorAll(".reveal");
+
+  const revealOnScroll = () => {
+    const trigger = window.innerHeight * 0.85;
+
+    elements.forEach((el) => {
+      const top = el.getBoundingClientRect().top;
+
+      if (top < trigger) {
+        el.classList.add("active");
+      }
+    });
+  };
+
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll();
+
+  return () => window.removeEventListener("scroll", revealOnScroll);
+}, []);
     return (
-        <div className="home">
+        <div className="home" id="home">
+          
+            
             <Header />
             <main>
                <div className="container">
-                <div className="home-container">
+                <div className="home-container reveal">
                      <div className="home1">
                        <h4>● Full-Stack Developer</h4>
                      </div>
@@ -28,29 +50,31 @@ const Body = () => {
 </div>
                        
                      <div className="home3">
-                      <h2>Architecture-level engineering for the modern web.<br />Specialized in building scalable, neon-infused systems <br />that bridge the gap between human and machine.</h2>
+                      <h2>Specialized in building scalable, neon-infused systems <br />that bridge the gap between human and machine.</h2>
 
                      </div>
                      <div className="home4">
                         <div className="btn1">
-                            <button>INITIALIZE PROJECT ●</button>
+                            <button><a href="#contact">INITIALIZE PROJECT ●</a></button>
                         </div>
                         <div className="btn2">
-                            <button>VIEW PROTOCOLS</button>
+                            <button><a href="https://github.com/Bani2024">VIEW PROJECTS</a></button>
                         </div>
                      </div>
                 </div>
                 <div className="frame-container">
                   <div className="frame-wrapper">
-    
+                   
+
                     <img src={images} alt="Frame" className="frame-image" />
                      </div>
                 </div>
                </div>
 
+                    
 
-                <div className="skill-container">
-  <div className="main-section">
+                <div className="skill-container reveal" id ="skills" >
+  <div className="main-section" >
 
     <div className="main-head">
       <div className="leftside-head">
@@ -122,8 +146,8 @@ const Body = () => {
   </div>
 </div>
 
-<div className="deploy">
-  <div className="deploy-main">
+<div className="deploy " id="projects">
+  <div className="deploy-main reveal">
     
     <div className="deploy-head">
       <h2>DEPLOYMENTS</h2>
@@ -188,8 +212,8 @@ const Body = () => {
 
 
 
-<div className="core-dev">
-  <div className="core-container">
+<div className="core-dev" id="techStack">
+  <div className="core-container reveal">
 
     <h2 className="core-title">Core Development</h2>
 
@@ -240,16 +264,15 @@ const Body = () => {
 </div>
 
 
-<div className="connection-section">
-  <div className="connection-container">
+<div className="connection-section " id="contact">
+  <div className="connection-container reveal">
 
     {/* LEFT SIDE */}
     <div className="connection-left">
       <h2>Systems Defined by Purpose</h2>
 
       <p>
-        I don't just build websites; I engineer digital ecosystems.
-        My philosophy is rooted in technical precision and intentional design.
+        
         Every line of code serves a purpose, and every pixel is placed with strategic intent.
       </p>
 

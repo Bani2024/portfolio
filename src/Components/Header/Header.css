@@ -8,7 +8,7 @@ flex-direction: column;
 align-items: flex-start;
 padding: 0px;
 
-position: absolute;
+position: fixed;
 width: 100%;
 height: auto;
 left: 0px;
@@ -140,35 +140,38 @@ flex-grow: 0;
 
 }
 
-li a{
- /* Text */
-
-
-
-font-family: 'Space Grotesk';
-font-style: normal;
-font-weight: 700;
-font-size: 16px;
-line-height: 24px;
-/* identical to box height, or 150% */
-display: flex;
-align-items: center;
-letter-spacing: -0.4px;
-text-transform: uppercase;
-text-decoration: none;
-color: #B7EEFC;
-
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-
+.link li a {
+  position: relative;
+  font-family: 'Space Grotesk';
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -0.4px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #B7EEFC;
+  transition: all 0.3s ease;
 }
-li a:hover{
-	/* Text */
-	text-decoration: underline;
-	color:#8FF5FF;
+
+/* 🔹 Glow effect */
+.link li a:hover {
+  color: #8FF5FF;
+  text-shadow: 0 0 8px rgba(143, 245, 255, 0.6);
+}
+
+/* 🔹 Animated underline */
+.link li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #8FF5FF, #00EEFC);
+  transition: width 0.3s ease;
+}
+
+.link li a:hover::after {
+  width: 100%;
 }
 
 .btn{
@@ -268,5 +271,32 @@ text-decoration: none;
 
   .btn {
     display: none; /* hide button in mobile (optional) */
+  }
+}
+/* ------------------ TABLET ------------------ */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .navbar-container {
+    padding: 16px 24px; /* less padding than desktop */
+  }
+
+  .logo h1 {
+    font-size: 1.3rem;
+  }
+
+  .link {
+    gap: 24px; /* reduce spacing */
+  }
+
+  .link li a {
+    font-size: 14px; /* slightly smaller text */
+  }
+
+  .btn {
+    padding: 6px 16px;
+  }
+
+  .resume-btn {
+    font-size: 12px;
   }
 }

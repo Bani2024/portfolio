@@ -24,7 +24,7 @@ const Footer = () => {
                 </div>
                 <div className="app">
                     <FaMessage />
-                   <a href="">Email</a> 
+                   <a href="mailto:sarbanibhattacharjee@gmail.com">Email</a> 
                 </div>
             </div>
         </footer>

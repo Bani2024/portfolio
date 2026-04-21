@@ -22,9 +22,10 @@ const Header = () => {
           <li><a href="#home">Home</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
+          <li><a href="#techStack">Tech Stack</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-
+    
         <div className="btn">
           <a href={resume} download="Sarbani_Bhattacharjee_Resume_2026.pdf" className="resume-btn">Resume</a>
         </div>
